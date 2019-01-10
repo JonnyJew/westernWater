@@ -1,0 +1,1 @@
+site_no	monthday	begin_dt	end_dt	count_nu	mean	std	min	max	p01	p05	p10	p15	p20	p25	p30	p35	p40	p45	p50	p55	p60	p65	p70	p75	p80	p90	p95	p99
