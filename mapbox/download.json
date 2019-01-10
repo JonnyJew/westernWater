@@ -1,0 +1,636 @@
+{"name" : "ns1:timeSeriesResponseType",
+"declaredType" : "org.cuahsi.waterml.TimeSeriesResponseType",
+"scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+"value" : {
+  "queryInfo" : {
+    "queryURL" : "http://waterservices.usgs.gov/nwis/dv/format=json&indent=on&sites=09180500&period=P5D&siteStatus=all",
+    "criteria" : {
+      "locationParam" : "[ALL:09180500]",
+      "variableParam" : "ALL",
+      "parameter" : [ ]
+    },
+    "note" : [ {
+      "value" : "[ALL:09180500]",
+      "title" : "filter:sites"
+    }, {
+      "value" : "[mode=PERIOD, period=P5D, modifiedSince=null]",
+      "title" : "filter:timeRange"
+    }, {
+      "value" : "methodIds=[ALL]",
+      "title" : "filter:methodId"
+    }, {
+      "value" : "2018-07-16T03:49:19.262Z",
+      "title" : "requestDT"
+    }, {
+      "value" : "37d9dcd0-88ab-11e8-9c72-6cae8b6642f6",
+      "title" : "requestId"
+    }, {
+      "value" : "Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.",
+      "title" : "disclaimer"
+    }, {
+      "value" : "caas01",
+      "title" : "server"
+    } ]
+  },
+  "timeSeries" : [ {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00010",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807042,
+        "default" : true
+      } ],
+      "variableName" : "Temperature, water, &#176;C",
+      "variableDescription" : "Temperature, water, degrees Celsius",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "deg C"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Mean",
+          "name" : "Statistic",
+          "optionCode" : "00003"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807042"
+    },
+    "values" : [ {
+      "value" : [ {
+        "value" : "27.1",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-10T00:00:00.000"
+      }, {
+        "value" : "27.2",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-11T00:00:00.000"
+      }, {
+        "value" : "27.1",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-12T00:00:00.000"
+      }, {
+        "value" : "27.0",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-13T00:00:00.000"
+      }, {
+        "value" : "26.5",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-14T00:00:00.000"
+      }, {
+        "value" : "26.2",
+        "qualifiers" : [ "P", "[4]" ],
+        "dateTime" : "2018-07-15T00:00:00.000"
+      } ],
+      "qualifier" : [ {
+        "qualifierCode" : "[4]",
+        "qualifierDescription" : "Qualifier is unknown.",
+        "qualifierID" : 0,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      }, {
+        "qualifierCode" : "P",
+        "qualifierDescription" : "Provisional data subject to revision.",
+        "qualifierID" : 1,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      } ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142739
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:00010:00003"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00010",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807042,
+        "default" : true
+      } ],
+      "variableName" : "Temperature, water, &#176;C",
+      "variableDescription" : "Temperature, water, degrees Celsius",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "deg C"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Random Instantaneous Values",
+          "name" : "Statistic",
+          "optionCode" : "00011"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807042"
+    },
+    "values" : [ {
+      "value" : [ ],
+      "qualifier" : [ ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142740
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:00010:00011"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00060",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807197,
+        "default" : true
+      } ],
+      "variableName" : "Streamflow, ft&#179;/s",
+      "variableDescription" : "Discharge, cubic feet per second",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "ft3/s"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Mean",
+          "name" : "Statistic",
+          "optionCode" : "00003"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807197"
+    },
+    "values" : [ {
+      "value" : [ {
+        "value" : "2250",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-10T00:00:00.000"
+      }, {
+        "value" : "2280",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-11T00:00:00.000"
+      }, {
+        "value" : "2220",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-12T00:00:00.000"
+      }, {
+        "value" : "2220",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-13T00:00:00.000"
+      }, {
+        "value" : "2160",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-14T00:00:00.000"
+      } ],
+      "qualifier" : [ {
+        "qualifierCode" : "P",
+        "qualifierDescription" : "Provisional data subject to revision.",
+        "qualifierID" : 0,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      } ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142741
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:00060:00003"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "00095",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 45807295,
+        "default" : true
+      } ],
+      "variableName" : "Specific conductance, water, unfiltered, microsiemens per centimeter at 25&#176;C",
+      "variableDescription" : "Specific conductance, water, unfiltered, microsiemens per centimeter at 25 degrees Celsius",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "uS/cm @25C"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Mean",
+          "name" : "Statistic",
+          "optionCode" : "00003"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "45807295"
+    },
+    "values" : [ {
+      "value" : [ {
+        "value" : "1210",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-10T00:00:00.000"
+      }, {
+        "value" : "1190",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-11T00:00:00.000"
+      }, {
+        "value" : "1190",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-12T00:00:00.000"
+      }, {
+        "value" : "1200",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-13T00:00:00.000"
+      }, {
+        "value" : "1250",
+        "qualifiers" : [ "P" ],
+        "dateTime" : "2018-07-14T00:00:00.000"
+      }, {
+        "value" : "1230",
+        "qualifiers" : [ "P", "[4]" ],
+        "dateTime" : "2018-07-15T00:00:00.000"
+      } ],
+      "qualifier" : [ {
+        "qualifierCode" : "[4]",
+        "qualifierDescription" : "Qualifier is unknown.",
+        "qualifierID" : 0,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      }, {
+        "qualifierCode" : "P",
+        "qualifierDescription" : "Provisional data subject to revision.",
+        "qualifierID" : 1,
+        "network" : "NWIS",
+        "vocabulary" : "uv_rmk_cd"
+      } ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142743
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:00095:00003"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "80154",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 53196299,
+        "default" : true
+      } ],
+      "variableName" : "Suspended sediment concentration, mg/L",
+      "variableDescription" : "Suspended sediment concentration, milligrams per liter",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "mg/l"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Mean",
+          "name" : "Statistic",
+          "optionCode" : "00003"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "53196299"
+    },
+    "values" : [ {
+      "value" : [ ],
+      "qualifier" : [ ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142744
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:80154:00003"
+  }, {
+    "sourceInfo" : {
+      "siteName" : "COLORADO RIVER NEAR CISCO, UT",
+      "siteCode" : [ {
+        "value" : "09180500",
+        "network" : "NWIS",
+        "agencyCode" : "USGS"
+      } ],
+      "timeZoneInfo" : {
+        "defaultTimeZone" : {
+          "zoneOffset" : "-07:00",
+          "zoneAbbreviation" : "MST"
+        },
+        "daylightSavingsTimeZone" : {
+          "zoneOffset" : "-06:00",
+          "zoneAbbreviation" : "MDT"
+        },
+        "siteUsesDaylightSavingsTime" : true
+      },
+      "geoLocation" : {
+        "geogLocation" : {
+          "srs" : "EPSG:4326",
+          "latitude" : 38.81054095,
+          "longitude" : -109.2934493
+        },
+        "localSiteXY" : [ ]
+      },
+      "note" : [ ],
+      "siteType" : [ ],
+      "siteProperty" : [ {
+        "value" : "ST",
+        "name" : "siteTypeCd"
+      }, {
+        "value" : "14030005",
+        "name" : "hucCd"
+      }, {
+        "value" : "49",
+        "name" : "stateCd"
+      }, {
+        "value" : "49019",
+        "name" : "countyCd"
+      } ]
+    },
+    "variable" : {
+      "variableCode" : [ {
+        "value" : "80155",
+        "network" : "NWIS",
+        "vocabulary" : "NWIS:UnitValues",
+        "variableID" : 53196300,
+        "default" : true
+      } ],
+      "variableName" : "Suspended sediment discharge, tons/d",
+      "variableDescription" : "Suspended sediment discharge, short tons per day",
+      "valueType" : "Derived Value",
+      "unit" : {
+        "unitCode" : "tons/day"
+      },
+      "options" : {
+        "option" : [ {
+          "value" : "Mean",
+          "name" : "Statistic",
+          "optionCode" : "00003"
+        } ]
+      },
+      "note" : [ ],
+      "noDataValue" : -999999.0,
+      "variableProperty" : [ ],
+      "oid" : "53196300"
+    },
+    "values" : [ {
+      "value" : [ ],
+      "qualifier" : [ ],
+      "qualityControlLevel" : [ ],
+      "method" : [ {
+        "methodDescription" : "",
+        "methodID" : 142745
+      } ],
+      "source" : [ ],
+      "offset" : [ ],
+      "sample" : [ ],
+      "censorCode" : [ ]
+    } ],
+    "name" : "USGS:09180500:80155:00003"
+  } ]
+},
+"nil" : false,
+"globalScope" : true,
+"typeSubstituted" : false
+}

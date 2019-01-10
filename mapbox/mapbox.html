@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+    <script src='HU8Key.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <link href='style.css' rel='stylesheet' />
+
+
+
+</head>
+<body>
+
+<div id='map'></div>
+    
+<div class='map-overlay top'>
+    <div class='map-overlay-inner'>
+        <fieldset>
+            <label>Show Layers</label>
+             <div>
+                <input type="checkbox" id="watersheds" name="isShown" /> <label for="watersheds">watersheds</label>
+                <input type="checkbox" id="guages" name="isShown"  /> <label for="guages">Guages</label>
+                <input type="checkbox" id="dams" name="isShown"  /><label for="dams">Dams</label>
+            </div>
+        </fieldset>
+    </div>
+    
+    <div class='map-overlay-info' id="chartContainer">
+        <div><label>River Flow</label></div>
+        <canvas id="guageChart"></canvas>
+    </div>
+    <div class='map-overlay-info' id="damContainer">
+        <div><label>Dam Info</label></div>
+        <div id="damInfo">
+        
+        </div>
+    </div>
+    
+</div>
+
+<script src='chart.js'></script>
+
+<script>
+  
+    
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ubnlqZXciLCJhIjoiY2lwaDRkYzNiMDB5ZnRqbTRya3p2NnBlYSJ9.8a_VqlDVHoaqItHW9llIfQ';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/jonnyjew/cjhvg8hzx0jcx2sly0mj2k4do', // stylesheet location
+    center: [-110,39], // starting position [lng, lat]
+    zoom: 6, // starting zoom
+    minZoom: 4.2,
+    maxBounds: [[-160.0, 30.0], [-90.0, 50.0]]
+});
+    map.on('load', function(){
+
+        
+
+            //add rivers
+            map.addSource('riverPaths',{
+                "type": "geojson",
+                "data": "HU8RiverPathsZ.geojson"
+            });
+        
+        
+            map.addLayer({
+            "id": "Colorado",
+            "type": "line",
+            "source": 'riverPaths',
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "maxzoom": 17,
+            "paint": {
+                "line-color": "#096390",
+                "line-width": 9
+            },
+            "filter":["==","ZOOM",1]
+        
+            },'water');
+        
+        map.addLayer({
+            "id": "zoom5",
+            "type": "line",
+            "source": 'riverPaths',
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "maxzoom": 17,
+            "paint": {
+                "line-color": "#096390",
+                "line-width": 7
+            },
+            "filter":["==","ZOOM",5]
+        
+            },'water');
+        
+        
+         map.addLayer({
+            "id": "zoom7",
+            "type": "line",
+            "source": 'riverPaths',
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "maxzoom": 17,
+            "paint": {
+                "line-color": "#096390",
+                "line-width": 4
+            },
+            "filter":["==","ZOOM",7]
+        
+            },'water');
+
+        
+        map.addLayer({
+            "id": "riverTarget",
+            "type": "line",
+            "source": 'riverPaths',
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "maxzoom": 17,
+            "paint": {
+                "line-opacity": 0,
+                "line-width": 7
+            }
+        
+            },'water');
+        
+        
+            //add rivers
+            map.addLayer({
+            "id": "selectedRiver",
+            "type": "line",
+            "source": 'riverPaths',
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "maxzoom": 17,
+            "paint": {
+                "line-color": "#0909ff",
+                "line-width": 6
+            },
+            "filter" : ["==","GNIS_ID","NONE"]
+        },'water');
+
+            //add river labels
+    //        map.addLayer({
+    //        "id": "riverLabels",
+    //        "type": "symbol",
+    //        "source": 'riverPaths',
+    //        "layout": {
+    //            "symbol-placement": "point",
+    //            "text-field": '{GNIS_NAME}',
+    //            "text-size": 16
+    //        },
+    //        "maxzoom": 17,
+    //
+    //    });
+
+
+
+        
+} );
+    
+
+    
+
+
+
+    
+    function getFileFromServer(url, doneCallback) {
+        var xhr;
+
+        xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = handleStateChange;
+        xhr.open("GET", url, true);
+        xhr.setRequestHeader('Content-Type', 'text/plain');
+        xhr.send();
+
+        function handleStateChange() {
+            if (xhr.readyState === 4) {
+                doneCallback(xhr.status == 200 ? xhr.responseText : null);
+            }
+        }
+    }
+   
+    
+    var mouseCoord;
+    map.on('mousemove', function (e) {
+        mouseCoord=(e.lngLat);
+    });
+    
+
+
+</script>
+<script src="dams.js"></script>
+<script src="guages.js"></script>
+<script src="rivers.js"></script>
+<script src="watersheds.js"></script>    
+<script src="ui.js"></script>
+
+</body>
+</html>

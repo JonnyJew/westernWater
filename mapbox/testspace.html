@@ -1,0 +1,47 @@
+<script>
+
+function getFileFromServer(url, doneCallback) {
+    var xhr;
+
+    xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = handleStateChange;
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader('Content-Type', 'text/plain');
+    xhr.send();
+
+    function handleStateChange() {
+        if (xhr.readyState === 4) {
+            doneCallback(xhr.status == 200 ? xhr.responseText : null);
+        }
+    }
+}
+
+var YTDflow=getFileFromServer("download.json", function(text) {
+    if (text === null) {
+        alert("failed to load")
+    }
+    else {
+        //console.log(text);
+        var guageData=JSON.parse(text);
+        var YTDflow=[];
+        //console.log(guageData.value.timeSeries)
+        for(var i = 0; i< guageData.value.timeSeries.length; i++){
+            //console.log(guageData.value.timeSeries[i].name.slice(-11,-6));
+            if( guageData.value.timeSeries[i].name.slice(-11,-6)=="00060"){//check that we are looking at CFS data
+                //console.log(guageData.value.timeSeries[i]);
+                var flowData=guageData.value.timeSeries[i].values[0].value;
+                for (var j =0; j<flowData.length; j++){
+                    YTDflow.push(flowData[j].value);
+                    console.log("push")
+                }
+                for (var i=0; i < YTDflow.length; i ++){
+                    console.log(YTDflow[i])   
+                }
+            }
+        }
+    }
+});
+
+    alert(YTDflow);
+
+</script>

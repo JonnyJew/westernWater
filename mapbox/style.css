@@ -1,0 +1,76 @@
+body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.map-overlay .map-overlay-info {
+    background-color: #fff;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.10);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.map-overlay-inner fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.map-overlay-inner fieldset:last-child {
+    margin: 0;
+}
+
+.map-overlay-inner select {
+    width: 100%;
+}
+
+.map-overlay-inner label {
+    display: inline;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.map-overlay-inner button {
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.mapboxgl-popup-tip {
+    visibility:hidden;
+}
+
+.mapboxgl-popup-content{
+
+}
+
+        
+.riverLabel{
+    background: none;
+    text-shadow: 0em 0em 0.3em white,0em 0em 0.3em white,0em 0em 0.3em white;
+    font-size: 14pt;
+    padding:0;
+    color: cornflowerblue;
+    font-family: serif;
+    font-style: italic; 
+    font-weight: bolder;
+    box-shadow: none;
+}
