@@ -50,9 +50,10 @@ map.on('click','guages', function(e){
 
     getFileFromServer(guageStatFile, function(myText) {
         if (myText === null) {
+			console.log("myText0: "+myText);
 			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
-			myText = emptyText;
-			console.log("myText1: "+myText);
+				myText = emptyText;
+				console.log("myText1: "+myText);
 			});   
         }
 
