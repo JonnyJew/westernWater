@@ -51,6 +51,7 @@ map.on('click','guages', function(e){
     getFileFromServer(guageStatFile, function(text) {
         if (text === null) {
             alert("failed to load gauge:"+guageID)
+	    document.getElementById('guageDisclaimer').innerHTML='Historic Avgs unavailable';
         }
         else {
             var monthday=[];
