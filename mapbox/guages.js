@@ -45,6 +45,8 @@ map.on('click','guages', function(e){
     var guageID = e.features[0].properties.siteID;
     var guageName = e.features[0].properties.name;
     var guageStatFile="../guagestats/"+guageID+".txt";
+    document.getElementById('guageDisclaimer').innerHTML='';
+
 
     getFileFromServer(guageStatFile, function(text) {
         if (text === null) {
