@@ -104,9 +104,9 @@ map.on('click','guages', function(e){
                             //console.log(guageData.value.timeSeries[i]);
                             var flowData=guageData.value.timeSeries[i].values[0].value;
                             for (var j =0; j<flowData.length; j++){
-								if(flowData[j].value<0){//handles when gauge data records are error ex -999999
-									flowData[j]=null
-								}
+				if(flowData[j].value<0){//handles when gauge data records are error ex -999999
+					flowData[j].value=null
+				}
                                 YTDflow.push(flowData[j].value);
                                 //console.log(flowData[j].value)
                             }
