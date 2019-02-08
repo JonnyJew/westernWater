@@ -50,11 +50,9 @@ map.on('click','guages', function(e){
 
     getFileFromServer(guageStatFile, function(myText) {
         if (myText === null) {
-		//couldnt load historic stats
-            alert("failed to load historic gauge:"+guageID);
 			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
-				myText = emptyText;
-				alert("text: " +myText);
+			myText = emptyText;
+
 			});   
         }
 
@@ -71,6 +69,7 @@ map.on('click','guages', function(e){
 		var p75=[];
 
 		// By lines
+	    	console.log("myText: "myText);
 		var lines = myText.split('\n');
 		lines=lines.slice(2,-1);//omits column headers and null row at end of data
 		lines.map(function(item){
