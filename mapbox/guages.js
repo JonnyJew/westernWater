@@ -52,7 +52,9 @@ map.on('click','guages', function(e){
         if (text === null) {
 		//couldnt load historic stats
             alert("failed to load historic gauge:"+guageID);
-			text = getFileFromServer("../guagestats/emptyStats.txt", function(){});   
+			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
+				text = emptyText;
+			});   
         }
 
 		var monthday=[];
