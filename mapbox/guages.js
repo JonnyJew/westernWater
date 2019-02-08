@@ -52,7 +52,7 @@ map.on('click','guages', function(e){
         if (myText === null) {
 			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
 			myText = emptyText;
-
+			console.log("myText1: "+myText);
 			});   
         }
 
@@ -69,7 +69,7 @@ map.on('click','guages', function(e){
 		var p75=[];
 
 		// By lines
-	    	console.log("myText: "+myText);
+	    	console.log("myText2: "+myText);
 		var lines = myText.split('\n');
 		lines=lines.slice(2,-1);//omits column headers and null row at end of data
 		lines.map(function(item){
