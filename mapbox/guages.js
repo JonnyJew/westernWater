@@ -69,7 +69,7 @@ map.on('click','guages', function(e){
 		var p75=[];
 
 		// By lines
-	    	console.log("myText: "myText);
+	    	console.log("myText: "+myText);
 		var lines = myText.split('\n');
 		lines=lines.slice(2,-1);//omits column headers and null row at end of data
 		lines.map(function(item){
