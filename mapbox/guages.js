@@ -54,6 +54,7 @@ map.on('click','guages', function(e){
             alert("failed to load historic gauge:"+guageID);
 			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
 				text = emptyText;
+				alert("text: " +text);
 			});   
         }
 
