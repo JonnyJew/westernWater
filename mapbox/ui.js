@@ -58,6 +58,7 @@ $('#guages').change(function() {
         }
         //document.getElementById('watershedInfo').innerHTML = "";
         document.getElementById('chartContainer').style.display = "none";
+        document.getElementById('guageDisclaimer').innerHTML = '';
 
 
    }
