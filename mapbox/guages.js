@@ -48,13 +48,13 @@ map.on('click','guages', function(e){
     document.getElementById('guageDisclaimer').innerHTML='';
 
 
-    getFileFromServer(guageStatFile, function(text) {
-        if (text === null) {
+    getFileFromServer(guageStatFile, function(myText) {
+        if (myText === null) {
 		//couldnt load historic stats
             alert("failed to load historic gauge:"+guageID);
 			getFileFromServer("../guagestats/emptyStats.txt", function(emptyText){
-				text = emptyText;
-				alert("text: " +text);
+				myText = emptyText;
+				alert("text: " +myText);
 			});   
         }
 
@@ -71,7 +71,7 @@ map.on('click','guages', function(e){
 		var p75=[];
 
 		// By lines
-		var lines = text.split('\n');
+		var lines = myText.split('\n');
 		lines=lines.slice(2,-1);//omits column headers and null row at end of data
 		lines.map(function(item){
 			  var tabs = item.split('\t');
@@ -96,13 +96,13 @@ map.on('click','guages', function(e){
 		var guageStats=[monthday,begin_dt,end_dt,min,p25,p50,mean,p75,max];
 		var YTDflow=[];//empty array to be filled by asynch call below 
 
-		getFileFromServer(getYTDGuageStats(guageID), function(text) {
-			if (text === null) {
+		getFileFromServer(getYTDGuageStats(guageID), function(myText) {
+			if (myText === null) {
 				alert("failed to load YTD")
 			}
 			else {
-				//console.log(text);
-				var guageData=JSON.parse(text);
+				//console.log(myText);
+				var guageData=JSON.parse(myText);
 
 				//console.log(guageData.value.timeSeries)
 				for(var i = 0; i< guageData.value.timeSeries.length; i++){
