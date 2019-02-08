@@ -105,10 +105,10 @@ map.on('click','guages', function(e){
                             var flowData=guageData.value.timeSeries[i].values[0].value;
                             for (var j =0; j<flowData.length; j++){
 				if(flowData[j].value<0){//handles when gauge data records are error ex -999999
-					flowData[j].value=null
+					flowData[j].value=null;
+					document.getElementById('guageDisclaimer').innerHTML='Some YTD flows are unavailable and will not be shown. '
 				}
                                 YTDflow.push(flowData[j].value);
-                                //console.log(flowData[j].value)
                             }
 //                                for (var i=0; i < YTDflow.length; i ++){
 //                                    console.log(YTDflow[i])   
