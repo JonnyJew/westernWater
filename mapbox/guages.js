@@ -48,7 +48,7 @@ map.on('click','guages', function(e){
 
     getFileFromServer(guageStatFile, function(text) {
         if (text === null) {
-            alert("failed to load")
+            alert("failed to load gauge:"+guageID)
         }
         else {
             var monthday=[];
