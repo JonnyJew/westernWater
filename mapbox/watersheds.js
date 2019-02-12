@@ -49,7 +49,7 @@ var loadedHUCs=[];
 map.on('click', 'WBD-hilite', function (e) {
     var huc8=e.features[0].properties["HUC8"];
     map.setFilter('WBD-hilite',["==","HUC8",huc8]);
-    var url="..\\GEOJSON\\riversHUC8\\_"+huc8+".GeoJSON";
+    var url="..\\GEOJSON\\riversHUC8\\"+huc8+".GeoJSON";
     
     //hide other HUCs Rivers and disable listeners
     loadedHUCs.forEach(function(loadedHUC){
