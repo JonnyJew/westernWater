@@ -56,6 +56,68 @@ map.on('click','guages', function(e){
 				console.log("myText1: "+myText);
 			});   
         }
+<<<<<<< HEAD
+        else {
+            var monthday=[];
+            var begin_dt=[];
+            var end_dt	=[];
+            var count_nu=[];
+            var mean=[];
+            var std	=[];
+            var min	=[];
+            var max=[];
+            var p25=[];
+            var p50=[];
+            var p75=[];
+
+            // By lines
+            var lines = text.split('\n');
+            lines=lines.slice(2,-1);//omits column headers and null row at end of data
+            lines.map(function(item){
+                  var tabs = item.split('\t');
+                  monthday.push(tabs[1]);
+                  begin_dt.push(tabs[2]);
+                  end_dt.push(tabs[3]);
+                  count_nu.push(tabs[4]);
+                  mean.push(tabs[5]);
+                  std.push(tabs[6]);
+                  min.push(tabs[7]);
+                  max.push(tabs[8]);
+                  p25.push(tabs[14]);
+                  p50.push(tabs[19]);
+                  p75.push(tabs[24]);
+            });
+
+            //format monthday
+            for(var i=0;i<monthday.length;i++){
+                monthday[i]=monthday[i].slice(0,2)+"/"+monthday[i].slice(2);
+            }
+
+            var guageStats=[monthday,begin_dt,end_dt,min,p25,p50,mean,p75,max];
+            var YTDflow=[];//empty array to be filled by asynch call below 
+
+            getFileFromServer(getYTDGuageStats(guageID), function(text) {
+                if (text === null) {
+                    alert("failed to load")
+                }
+                else {
+                    //console.log(text);
+                    var guageData=JSON.parse(text);
+
+                    //console.log(guageData.value.timeSeries)
+                    for(var i = 0; i< guageData.value.timeSeries.length; i++){
+                        //console.log(guageData.value.timeSeries[i].name.slice(-11,-6));
+                        if( guageData.value.timeSeries[i].name.slice(-11,-6)=="00060"){//check that we are looking at CFS data
+                            //console.log(guageData.value.timeSeries[i]);
+                            var flowData=guageData.value.timeSeries[i].values[0].value;
+                            for (var j =0; j<flowData.length; j++){
+								if(flowData[j].value<0){//handles when gauge data records are error ex -999999
+									flowData[j].value=null
+								}
+                                YTDflow.push(flowData[j].value);
+                                //console.log(flowData[j].value)
+                            }
+=======
 
 		var monthday=[];
 		var begin_dt=[];
@@ -117,6 +179,7 @@ map.on('click','guages', function(e){
 			}
 							YTDflow.push(flowData[j].value);
 						}
+>>>>>>> 14bd8d97675604c353da0513ef8220704d4de6a6
 //                                for (var i=0; i < YTDflow.length; i ++){
 //                                    console.log(YTDflow[i])   
 //                                }
